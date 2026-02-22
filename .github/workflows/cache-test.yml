@@ -5,7 +5,7 @@ jobs:
   cache-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Cache
@@ -16,4 +16,9 @@ jobs:
           key: cache-820d9fa
 
       - name: prime-cache-820d9fa
-        run: echo "Cache hit result is ${{ steps.cache-step.outputs.cache-hit }}"
+        run: |
+          echo "Cache hit result: ${{ steps.cache-step.outputs.cache-hit }}"
+          if [ "${{ steps.cache-step.outputs.cache-hit }}" != "true" ]; then
+            mkdir -p my-cache-dir
+            echo "Priming the cache..." > my-cache-dir/data.txt
+          fi
