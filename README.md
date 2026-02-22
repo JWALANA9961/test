@@ -46,3 +46,9 @@ pytest tests/ -v
 ## License
 
 MIT
+
+# Automated Security Updates Project
+Developer: 25ds3000157@ds.study.iitm.ac.in
+
+This project is configured with Dependabot to automatically 
+monitor and update Python dependencies.
