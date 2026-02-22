@@ -1,0 +1,9 @@
+name: Email Verification Action
+on: [push]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 25ds3000157@ds.study.iitm.ac.in
+        run: echo "Action triggered."
